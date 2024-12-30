@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">`
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        .active {
+            border: 2px solid green;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box">Men kvadratman</div>
+    <button id="add">Qo'shish</button>
+    <button id="remove">O'chirish</button>
+    <button id="toggle">Toggle</button>
+
+
+    <script>
+        const box = document.getElementById('box');
+        const add = document.getElementById('add')
+        const removes = document.getElementById('remove');
+        const toogles=document.getElementById('toggle');
+
+
+
+        add.addEventListener('click', () => {
+            box.classList.add('active')
+        })
+
+        removes.addEventListener('click',()=>{
+          box.classList.remove('active')
+        })
+
+        toogles.addEventListener('click',()=>{
+            box.classList.toggle('active')
+        })
+        
+    </script>
+
+</body>
+
+</html>
