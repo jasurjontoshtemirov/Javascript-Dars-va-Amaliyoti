@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            border: 3px solid red;
+            
+        }
+        .active{
+            background-image: url('117719221.png');
+            background-size: cover;
+        }
+        .nature{
+            background-image: url('google.jpg');
+            background-size: cover;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div>    <img alt="Hello world">
+</div>
+
+    <button id="one-image">1-Rasm</button>
+    <button id="two-image">2-Rasm</button>
+
+    <script>
+        // Elementlarni olib kelish
+        const rasm=document.querySelector('img')
+        const one=document.getElementById('one-image');
+        const two=document.getElementById('two-image');
+        const body=document.querySelector('body')
+        
+
+        
+
+        one.addEventListener('click',()=>{
+            rasm.setAttribute('src','117719221.png')
+            rasm.setAttribute('width','200')
+            body.classList.add('active')
+            body.classList.remove('nature')
+            document.querySelector('div').style.border='none'
+            
+
+        })
+        two.addEventListener('click',()=>{
+            rasm.setAttribute('src','google.jpg')
+            rasm.setAttribute('width','200')
+            body.classList.add('nature')
+            body.classList.remove('active')
+
+            document.querySelector('div').style.border='none'
+
+
+        });
+
+
+
+    </script>
+</body>
+</html>
