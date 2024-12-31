@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>047. add va remove methodlari. ClassList </title>
     <style>
-        .success{
+        .success {
             border: 3px solid red;
             background-color: red;
             color: black;
             padding: 20px;
         }
-        .error{
+
+        .error {
             background-color: black;
             color: #fff;
             padding: 20px;
@@ -20,32 +22,42 @@
         }
     </style>
 </head>
+
 <body>
+    <h1>Guy</h1>
+    <h2>Hello world</h2>
     <p>Lorem, error dolor.</p>
     <p>Lorem, ipsum dolor.</p>
     <p>Lorem, success dolor.</p>
     <p>Lorem, ipsum dolor.</p>
-    <p>lorem, error  andfil</p>
+    <p>lorem, error andfil</p>
     <p>Lorem ipsum dolor sit amet.</p>
     <p>Lorem ipsum success dolor sit amet consectetur.</p>
     <p>Lorem, ipsum dolor.</p>
 
 
     <script>
-        const paragraf=document.querySelectorAll('p')
+        const paragraf = document.querySelectorAll('p'); //p tegini olib kelib oldij
+        const h2 = document.querySelector('h2'); // h2 tegini jsga olib keldik
+        console.log(h2.parentElement); // ota element
+        console.log(h2.parentElement.parentElement); // katata element
+        console.log(h2.nextElementSibling); // keyingi element
+        console.log(h2.previousElementSibling); // keyingi element
 
-paragraf.forEach((text)=>{
-    if(text.textContent.includes('error')){
-        text.classList.add('error')
-    }
-    if (text.textContent.includes('success')){
-        text.classList.add('success')
-    }
-    
-    
-    
-})
 
+
+        paragraf.forEach((text) => {
+            if (text.textContent.includes('error')) {
+                text.classList.add('error')
+            }
+            if (text.textContent.includes('success')) {
+                text.classList.add('success')
+            }
+
+
+
+        })
     </script>
 </body>
+
 </html>

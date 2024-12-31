@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click eventi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            width: 250px;
+            padding: 20px;
+            list-style-type: none;
+            border: 3px solid red;
+            margin-top: 10px;
+            background-color: red;
+            /* text-decoration: line-through; */
+        }
+
+        span {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: grey;
+            border: none;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>todo</h1>
+    <ul>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing. span</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+        <button>Click me</button>
+    </ul>
+
+    <script>
+        const ul = document.querySelector('ul')
+        const listlar = document.querySelectorAll('li');
+        const button = document.querySelector('button');
+        function ios() {
+            listlar.forEach((list) => {
+                list.addEventListener('mouseover', (e) => {
+                    e.target.style.backgroundColor = 'blue'
+                    e.target.style.border = 'none'
+                })
+            })
+        }
+        ios()
+        ul.addEventListener('click', (es) => {
+            if (es.target.nodeName == 'UL') {
+                const as = document.createElement('p')
+                as.textContent += `ul contentiga tegma  `
+                ul.append(as)
+            } 
+          else if(es.target.nodeName == 'LI'){
+            es.target.remove()
+           } 
+        })
+        button.addEventListener('click', () => {
+            const li = document.createElement('li');
+            li.textContent += 'Hello world 👍👍😘👌'
+            li.addEventListener('mouseover', () => {
+                li.style.backgroundColor = 'blue'
+                li.style.border = 'none'
+
+            })
+            ul.prepend(li) //prepend eng tepeadan qo'shishni aytadi
+            // ul.append(li) //prepend eng pastdan qo'shishni aytadi
+        })
+    </script>
+</body>
+
+</html>
