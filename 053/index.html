@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Value 053 Dars</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(36, 224, 218);
+        }
+
+        .container {
+            border: 3px solid red;
+            position: absolute;
+            padding: 30px;
+            height: 200px;
+
+        }
+
+        input {
+            font-size: 30px;
+            outline: none;
+            border-radius: 10px;
+            border: 3px solid red;
+            background: local;
+        }
+
+        .error {
+            box-shadow: 0 0 10px red;
+            border: red;
+        }
+
+        .success {
+            box-shadow: 0 0 10px rgb(0, 255, 13);
+            border: rgb(0, 255, 13);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="formInput">
+            <h1>Hello World</h1>
+            <label for="email">Email:</label> <br>
+            <input type="text" placeholder="Email kiriting" id="email">
+            <br> <br>
+            <button>Yuborish</button>
+        </form>
+
+    </div>
+
+
+    <script>
+        const input = document.querySelector('#email');
+        const regEx=/^[A-Za-z0-9]{0,}@gmail\.com$/;
+        const Form=document.querySelector('#formInput');
+
+        Form.addEventListener('submit',(e)=>{
+            e.preventDefault()
+        })
+        input.addEventListener('input',()=>{
+            const value=input.value;
+            if(regEx.test(value)){
+                input.classList.add('success')
+                input.classList.remove('error')
+                
+            }
+            else{
+                input.classList.add('error')
+                input.classList.remove('success')
+
+                
+            }
+            
+        })
+
+        
+    </script>
+</body>
+
+</html>
